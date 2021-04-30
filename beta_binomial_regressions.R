@@ -159,7 +159,7 @@ R %>% arrange(desc(negative_log10_pvalue))
 
 # WRITE REGRSSION RESULTS
 R %>% arrange(desc(negative_log10_pvalue)) %>% 
-  readr::write_csv("James_et_al_2021/2021_01_13_Beta_Binomial.results.tsv")
+  readr::write_tsv("James_et_al_2021/2021_01_13_delta_BCG_beta_binomial_results.tsv")
   #readr::write_csv("bioRxiv/SI/2021_01_13_Beta_Binomial.results.tsv")
 
 # DEFINE VISUAL SCHEMA
@@ -261,7 +261,7 @@ pub_theme = theme_classic()+
   theme(panel.grid.minor = element_blank())
 
 # MAKE A PLOT OF CHANGE BETWEEN V01,V28
-pdf(paste("James_et_al_2021/fR_raw_changes_",feature_to_examine,".pdf"), width = 4, height = 3.5)
+#pdf(paste("James_et_al_2021/fR_raw_changes_",feature_to_examine,".pdf"), width = 4, height = 3.5)
 ggplot(ggdf2, 
        aes(x = visit,
            y = fR_low,
@@ -282,6 +282,6 @@ ggplot(ggdf2,
   pub_theme + 
   xlab("") + ylab("") +
   theme(legend.position = "none")
-dev.off()
+#dev.off()
 
 ## END ##
